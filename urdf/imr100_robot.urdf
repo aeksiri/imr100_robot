@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="imr100_robot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.012967 0.0031255 0.34392"
+        rpy="0 0 0" />
+      <mass
+        value="216.84" />
+      <inertia
+        ixx="54.74"
+        ixy="-0.20377"
+        ixz="-0.93282"
+        iyy="64.003"
+        iyz="0.19915"
+        izz="19.729" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_wheel_link">
+    <inertial>
+      <origin
+        xyz="3.5574E-18 -2.7756E-17 0"
+        rpy="0 0 0" />
+      <mass
+        value="4.1393" />
+      <inertia
+        ixx="0.011102"
+        ixy="-9.4134E-35"
+        ixz="8.4489E-39"
+        iyy="0.020523"
+        iyz="-1.507E-35"
+        izz="0.011102" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/left_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/left_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-4.40012257148797E-05 0.226499995726031 0"
+      rpy="0 0 0.000194265898410156" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="60"
+      velocity="15" />
+  </joint>
+  <link
+    name="right_wheel_link">
+    <inertial>
+      <origin
+        xyz="2.1665E-18 -2.7756E-17 1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="4.1393" />
+      <inertia
+        ixx="0.011102"
+        ixy="-6.2827E-35"
+        ixz="2.5746E-35"
+        iyy="0.020523"
+        iyz="-1.7456E-34"
+        izz="0.011102" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/right_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/right_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="4.40012257229637E-05 -0.226499995726031 0"
+      rpy="0 0 0.000194265898410156" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="60"
+      velocity="15" />
+  </joint>
+  <link
+    name="front_caster_link">
+    <inertial>
+      <origin
+        xyz="-0.0013294 5.854E-05 -0.029721"
+        rpy="0 0 0" />
+      <mass
+        value="0.027339" />
+      <inertia
+        ixx="2.0014E-05"
+        ixy="3.266E-08"
+        ixz="-2.9919E-06"
+        iyy="1.5684E-05"
+        iyz="3.8577E-08"
+        izz="1.9422E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/front_caster_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/front_caster_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_caster_joint"
+    type="continuous">
+    <origin
+      xyz="0.384999992735196 7.47923704174756E-05 -0.021"
+      rpy="0 0 0.000194265898413648" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_caster_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="front_wheel_link">
+    <inertial>
+      <origin
+        xyz="4.84380379139893E-08 5.58761678059031E-06 2.11140133155041E-12"
+        rpy="0 0 0" />
+      <mass
+        value="0.0736834010560834" />
+      <inertia
+        ixx="2.00646661874418E-05"
+        ixy="1.90742704730574E-14"
+        ixz="-1.41205388719093E-15"
+        iyy="2.22295933517578E-05"
+        iyz="3.35844637474125E-11"
+        izz="2.0065225977915E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/front_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/front_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.0219999999999997 0 -0.0539999999999956"
+      rpy="0 0 0" />
+    <parent
+      link="front_caster_link" />
+    <child
+      link="front_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="rear_caster_link">
+    <inertial>
+      <origin
+        xyz="-0.00132938529302762 5.85398412123003E-05 -0.0297207542141465"
+        rpy="0 0 0" />
+      <mass
+        value="0.0273389520218105" />
+      <inertia
+        ixx="2.00137421629653E-05"
+        ixy="3.2659681036821E-08"
+        ixz="-2.99192394304204E-06"
+        iyy="1.56840340417949E-05"
+        iyz="3.85774560410926E-08"
+        izz="1.94219351877898E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/rear_caster_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/rear_caster_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_caster_joint"
+    type="continuous">
+    <origin
+      xyz="-0.384999992735196 -7.47923704174755E-05 -0.021"
+      rpy="0 0 0.000194265898410156" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_caster_link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="rear_wheel_link">
+    <inertial>
+      <origin
+        xyz="4.84380379695004E-08 5.58761678065E-06 2.11150888440592E-12"
+        rpy="0 0 0" />
+      <mass
+        value="0.0736834010560833" />
+      <inertia
+        ixx="2.00646661874418E-05"
+        ixy="1.90742677249479E-14"
+        ixz="-1.41205358129547E-15"
+        iyy="2.22295933517577E-05"
+        iyz="3.35844637314466E-11"
+        izz="2.0065225977915E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/rear_wheel_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/rear_wheel_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.022000000000001 0 -0.0540000000000047"
+      rpy="0 0 0" />
+    <parent
+      link="rear_caster_link" />
+    <child
+      link="rear_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="qr_camera_link">
+    <inertial>
+      <origin
+        xyz="-0.0184359218795166 8.06302884881959E-05 -0.00118822064330295"
+        rpy="0 0 0" />
+      <mass
+        value="0.0501926185202318" />
+      <inertia
+        ixx="9.88585510203914E-06"
+        ixy="9.53035917056781E-08"
+        ixz="-4.2534538924444E-08"
+        iyy="1.36532369503079E-05"
+        iyz="-1.06409363468814E-08"
+        izz="1.23602058055E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/qr_camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.67843137254902 0.67843137254902 0.729411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/qr_camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="qr_camera_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0.000194265898726123 1.5707963267949 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="qr_camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="front_left_laser_link">
+    <inertial>
+      <origin
+        xyz="-4.43017602740348E-05 -7.74281347748484E-05 -0.0204571731991457"
+        rpy="0 0 0" />
+      <mass
+        value="8.48763266002905E-05" />
+      <inertia
+        ixx="7.47144124845311E-08"
+        ixy="-5.28533298338074E-10"
+        ixz="-1.61228763805579E-09"
+        iyy="7.49486375052518E-08"
+        iyz="-1.39292418228198E-09"
+        izz="1.41096216715449E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/front_left_laser_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/front_left_laser_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_laser_joint"
+    type="fixed">
+    <origin
+      xyz="0.454950453610541 0.255088386171468 -0.023001139187633"
+      rpy="-3.14159265358979 0 0.78542273605415" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_left_laser_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="front_right_laser_link">
+    <inertial>
+      <origin
+        xyz="-0.000159728329071296 -0.000247819765814755 -0.0204571731991457"
+        rpy="0 0 0" />
+      <mass
+        value="8.48763266002905E-05" />
+      <inertia
+        ixx="7.47144124845315E-08"
+        ixy="-5.28533298338081E-10"
+        ixz="-1.61228763805581E-09"
+        iyy="7.49486375052519E-08"
+        iyz="-1.39292418228198E-09"
+        izz="1.41096216715449E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/front_right_laser_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/front_right_laser_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_laser_joint"
+    type="fixed">
+    <origin
+      xyz="0.455049529218107 -0.254911604205026 -0.023001139187633"
+      rpy="-3.14159265358979 0 -0.78503420425733" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_right_laser_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rear_left_laser_linik">
+    <inertial>
+      <origin
+        xyz="-0.000159728333104292 -0.000247819770864494 -0.0204571731991373"
+        rpy="0 0 0" />
+      <mass
+        value="8.48763266002905E-05" />
+      <inertia
+        ixx="7.47144124845311E-08"
+        ixy="-5.28533298338101E-10"
+        ixz="-1.61228763805601E-09"
+        iyy="7.49486375052519E-08"
+        iyz="-1.39292418228199E-09"
+        izz="1.41096216715449E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/rear_left_laser_linik.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/rear_left_laser_linik.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_laser_joint"
+    type="fixed">
+    <origin
+      xyz="-0.455049529218106 0.254911604205026 -0.0230011391876263"
+      rpy="3.14159265358979 0 2.35655844933246" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_left_laser_linik" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rear_right_laser_link">
+    <inertial>
+      <origin
+        xyz="-0.000159728333237852 -0.000102100230248675 -0.020457173199139"
+        rpy="0 0 0" />
+      <mass
+        value="8.48763266002906E-05" />
+      <inertia
+        ixx="7.47144124845311E-08"
+        ixy="-5.2853329833821E-10"
+        ixz="-1.61228763805576E-09"
+        iyy="7.49486375052522E-08"
+        iyz="-1.39292418228196E-09"
+        izz="1.41096216715449E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/rear_right_laser_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/rear_right_laser_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_laser_axis"
+    type="fixed">
+    <origin
+      xyz="-0.454950453610356 -0.255088386171839 -0.0230011391876263"
+      rpy="3.14159265358979 0 -2.35616991753564" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_right_laser_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="front_camera_link">
+    <inertial>
+      <origin
+        xyz="0.00766980809090456 -4.77642122231038E-07 -4.81259467567247E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0481939068793065" />
+      <inertia
+        ixx="3.03039913400002E-05"
+        ixy="-2.90600819174091E-10"
+        ixz="3.71713061887905E-09"
+        iyy="4.45116634556147E-06"
+        iyz="1.09150333740657E-10"
+        izz="3.05772914056623E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/front_camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/front_camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_camera_joint"
+    type="fixed">
+    <origin
+      xyz="0.491499990725565 9.54816883377812E-05 0.0144999999999984"
+      rpy="0 0 0.000194265898410438" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_camera_link">
+    <inertial>
+      <origin
+        xyz="0.00766980809090462 -4.77642129658763E-07 -4.81259467567247E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0481939068793067" />
+      <inertia
+        ixx="3.03039913400005E-05"
+        ixy="-2.9060081910247E-10"
+        ixz="3.71713061887186E-09"
+        iyy="4.45116634556152E-06"
+        iyz="1.09150333738776E-10"
+        izz="3.05772914056626E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/left_camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/left_camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_camera_joint"
+    type="fixed">
+    <origin
+      xyz="-5.66285078399019E-05 0.291499994499509 0.0144999999999971"
+      rpy="0 0 1.57099059269328" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rear_camera_link">
+    <inertial>
+      <origin
+        xyz="0.00766980809090473 -4.7764212138239E-07 -4.81259467566969E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0481939068793062" />
+      <inertia
+        ixx="3.03039913400001E-05"
+        ixy="-2.90600819149368E-10"
+        ixz="3.71713061889174E-09"
+        iyy="4.45116634556144E-06"
+        iyz="1.09150333709356E-10"
+        izz="3.05772914056622E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/rear_camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/rear_camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_camera_joint"
+    type="fixed">
+    <origin
+      xyz="-0.4914999907256 -9.54816884680137E-05 0.0144999999999984"
+      rpy="0 0 -3.14139838769138" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_camera_link">
+    <inertial>
+      <origin
+        xyz="0.00766980809090456 -4.77642123119414E-07 -4.81259467567108E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0481939068793066" />
+      <inertia
+        ixx="3.03039913400004E-05"
+        ixy="-2.90600819123746E-10"
+        ixz="3.71713061888095E-09"
+        iyy="4.45116634556151E-06"
+        iyz="1.09150333729683E-10"
+        izz="3.05772914056625E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/right_camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.776470588235294 0.756862745098039 0.737254901960784 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/right_camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_cameara_joint"
+    type="fixed">
+    <origin
+      xyz="5.66285087732048E-05 -0.291499994499504 0.0144999999999991"
+      rpy="0 0 -1.57060206089649" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="top_laser_linki">
+    <inertial>
+      <origin
+        xyz="-4.36961862929851E-05 -3.94310158518299E-07 -0.0218347476384633"
+        rpy="0 0 0" />
+      <mass
+        value="0.0169417560649555" />
+      <inertia
+        ixx="9.8801998097031E-06"
+        ixy="4.45100154993122E-10"
+        ixz="-1.23666050635378E-08"
+        iyy="9.87525859015645E-06"
+        iyz="2.17245966087233E-10"
+        izz="1.03223726968166E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/top_laser_linki.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://imr100_robot/meshes/top_laser_linki.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="top_laser_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 1.94219284190001"
+      rpy="0 0 0.000194265898424034" />
+    <parent
+      link="base_link" />
+    <child
+      link="top_laser_linki" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

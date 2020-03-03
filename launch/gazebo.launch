@@ -1,0 +1,35 @@
+<launch>
+  <arg name="model" default="iMR100R)"/>
+  <arg name="x_pos" default="0.0"/>
+  <arg name="y_pos" default="0.0"/>
+  <arg name="z_pos" default="0.0"/>
+
+
+  <include
+    file="$(find gazebo_ros)/launch/empty_world.launch" />
+
+  <node
+    name="tf_base_footprint_to_base_link"
+    pkg="tf"
+    type="static_transform_publisher"
+    args="0 0 0.1 0 0 0 base_footprint base_link 40" />
+  
+  <param
+    name="robot_description"
+    textfile="$(find imr100_robot)/urdf/imr100_robot_gazebo.urdf" />
+
+  <!--node
+    name="spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find imr100_robot)/urdf/imr100_robot_gazebo.urdf -urdf -model imr100_robot_gazebo"
+    output="screen" /-->
+
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model $(arg model) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+
+  <node
+    name="fake_joint_calibration"
+    pkg="rostopic"
+    type="rostopic"
+    args="pub /calibrated std_msgs/Bool true" />
+</launch>
